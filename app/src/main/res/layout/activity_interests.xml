@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#29B6F6"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="32dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Step 2: Your Interests"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_marginBottom="24dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF"
+            android:padding="16dp"
+            android:layout_marginBottom="32dp">
+
+            <CheckBox android:id="@+id/cb1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Android Development" android:textSize="18sp" android:padding="8dp"/>
+            <CheckBox android:id="@+id/cb2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Python &amp; AI" android:textSize="18sp" android:padding="8dp"/>
+            <CheckBox android:id="@+id/cb3" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Web Development" android:textSize="18sp" android:padding="8dp"/>
+            <CheckBox android:id="@+id/cb4" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Data Science" android:textSize="18sp" android:padding="8dp"/>
+            <CheckBox android:id="@+id/cb5" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Cybersecurity" android:textSize="18sp" android:padding="8dp"/>
+            <CheckBox android:id="@+id/cb6" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="UI / UX Design" android:textSize="18sp" android:padding="8dp"/>
+            <CheckBox android:id="@+id/cb7" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Game Development" android:textSize="18sp" android:padding="8dp"/>
+            <CheckBox android:id="@+id/cb8" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Cloud Computing" android:textSize="18sp" android:padding="8dp"/>
+            <CheckBox android:id="@+id/cb9" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Machine Learning" android:textSize="18sp" android:padding="8dp"/>
+            <CheckBox android:id="@+id/cb10" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Blockchain" android:textSize="18sp" android:padding="8dp"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnFinishSetup"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Finish Setup"
+            android:backgroundTint="#00FF00"
+            android:textColor="#000000"/>
+
+    </LinearLayout>
+</ScrollView>
