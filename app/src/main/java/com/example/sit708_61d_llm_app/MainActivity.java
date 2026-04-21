@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // 1. Find the UI Elements
+
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etPassword);
         Button btnLogin = findViewById(R.id.btnLogin);
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences("HelpHubDatabase", MODE_PRIVATE);
 
-        // --- CREATE ACCOUNT BUTTON LOGIC ---
+
         btnCreateAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,20 +37,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // --- LOGIN BUTTON LOGIC ---
+
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String typedUsername = etUsername.getText().toString().trim();
                 String typedPassword = etPassword.getText().toString().trim();
 
-                // 1. Check if empty (Added this based on your exact catch!)
+
                 if (typedUsername.isEmpty() || typedPassword.isEmpty()) {
                     Toast.makeText(MainActivity.this, "Please fill in both fields!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                // 2. Read saved data
+
                 String savedUsername = sharedPreferences.getString("SAVED_USERNAME", null);
                 String savedPassword = sharedPreferences.getString("SAVED_PASSWORD", null);
 
@@ -59,11 +59,11 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                // 3. Verify credentials
+
                 if (typedUsername.equals(savedUsername) && typedPassword.equals(savedPassword)) {
                     Toast.makeText(MainActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
 
-                    // 4. Move straight to Dashboard (skipping setup)
+
                     Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
                     startActivity(intent);
                     finish();
