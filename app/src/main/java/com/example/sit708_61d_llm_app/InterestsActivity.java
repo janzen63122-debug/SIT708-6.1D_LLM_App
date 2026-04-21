@@ -18,7 +18,7 @@ public class InterestsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interests);
 
-        // Safely map the checkboxes
+
         CheckBox[] boxes = new CheckBox[]{
                 findViewById(R.id.cb1), findViewById(R.id.cb2), findViewById(R.id.cb3),
                 findViewById(R.id.cb4), findViewById(R.id.cb5), findViewById(R.id.cb6),
@@ -44,7 +44,7 @@ public class InterestsActivity extends AppCompatActivity {
                     return;
                 }
 
-                // BULLETPROOF WAY TO JOIN STRINGS (Fixes the crash!)
+
                 String interestsString = TextUtils.join(", ", selectedInterests);
 
                 SharedPreferences prefs = getSharedPreferences("HelpHubDatabase", MODE_PRIVATE);

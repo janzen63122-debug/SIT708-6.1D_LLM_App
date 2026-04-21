@@ -35,7 +35,7 @@ public class SetupActivity extends AppCompatActivity {
                     return;
                 }
 
-                // Save ALL data to the local notepad
+
                 SharedPreferences prefs = getSharedPreferences("HelpHubDatabase", MODE_PRIVATE);
                 SharedPreferences.Editor editor = prefs.edit();
                 editor.putString("SAVED_USERNAME", user);
@@ -44,10 +44,10 @@ public class SetupActivity extends AppCompatActivity {
                 editor.putString("SAVED_LEVEL", level);
                 editor.apply();
 
-                // Travel to the Interests Screen
+
                 Intent intent = new Intent(SetupActivity.this, InterestsActivity.class);
                 startActivity(intent);
-                finish(); // Closes setup so they can't go back
+                finish();
             }
         });
     }

@@ -25,18 +25,18 @@ public class ResultsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
 
-        // 1. Find the UI elements for all 3 cards
+
         TextView tvResQ1 = findViewById(R.id.tvResQ1); TextView tvResAns1 = findViewById(R.id.tvResAns1); TextView tvResExp1 = findViewById(R.id.tvResExp1);
         TextView tvResQ2 = findViewById(R.id.tvResQ2); TextView tvResAns2 = findViewById(R.id.tvResAns2); TextView tvResExp2 = findViewById(R.id.tvResExp2);
         TextView tvResQ3 = findViewById(R.id.tvResQ3); TextView tvResAns3 = findViewById(R.id.tvResAns3); TextView tvResExp3 = findViewById(R.id.tvResExp3);
         Button btnContinue = findViewById(R.id.btnContinue);
 
-        // 2. Unpack the data sent from the Task screen
+
         String q1 = getIntent().getStringExtra("Q1"); String a1 = getIntent().getStringExtra("A1"); String c1 = getIntent().getStringExtra("C1");
         String q2 = getIntent().getStringExtra("Q2"); String a2 = getIntent().getStringExtra("A2"); String c2 = getIntent().getStringExtra("C2");
         String q3 = getIntent().getStringExtra("Q3"); String a3 = getIntent().getStringExtra("A3"); String c3 = getIntent().getStringExtra("C3");
 
-        // 3. Set the text for the questions and compare the answers!
+
         if (q1 != null) {
             tvResQ1.setText(q1);
             tvResAns1.setText("Your Answer: " + a1 + "\nCorrect Answer: " + c1);
@@ -50,7 +50,7 @@ public class ResultsActivity extends AppCompatActivity {
             tvResQ1.setText("Error: Missing data.");
         }
 
-        // 4. Set up Retrofit
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://10.0.2.2:5000/")
                 .addConverterFactory(GsonConverterFactory.create())
@@ -58,14 +58,14 @@ public class ResultsActivity extends AppCompatActivity {
                 .build();
         apiService = retrofit.create(ApiService.class);
 
-        // 5. Ask the AI to evaluate each answer (Since we are using Mock Data, this is instant!)
+
         if (q1 != null) {
             getEvaluationFromAI(q1, a1, tvResExp1);
             getEvaluationFromAI(q2, a2, tvResExp2);
             getEvaluationFromAI(q3, a3, tvResExp3);
         }
 
-        // 6. The Logout Button
+
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

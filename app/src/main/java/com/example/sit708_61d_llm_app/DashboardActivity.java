@@ -13,17 +13,17 @@ public class DashboardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard); // Make sure your XML matches this name!
+        setContentView(R.layout.activity_dashboard);
 
-        // Find the text view (you might need to add a TextView with id tvWelcome to your activity_dashboard.xml)
+
         TextView tvWelcome = findViewById(R.id.tvWelcome);
-        Button btnStartQuiz = findViewById(R.id.btnStartQuiz); // Your button to go to TaskActivity
+        Button btnStartQuiz = findViewById(R.id.btnStartQuiz);
 
-        // Open the local notepad to get the user's saved name
+
         SharedPreferences prefs = getSharedPreferences("HelpHubDatabase", MODE_PRIVATE);
         String savedName = prefs.getString("SAVED_NAME", "Student");
 
-        // Display Hello [Name]
+
         if (tvWelcome != null) {
             tvWelcome.setText("Hello " + savedName + "!");
         }
