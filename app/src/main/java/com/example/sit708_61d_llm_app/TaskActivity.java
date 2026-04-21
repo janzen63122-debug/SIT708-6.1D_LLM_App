@@ -25,13 +25,11 @@ public class TaskActivity extends AppCompatActivity {
     private ApiService apiService;
     private ProgressBar loadingSpinner;
 
-    // UI Elements
     private TextView tvProgress, tvQuestion, tvHintText;
     private RadioGroup rgAnswers;
     private RadioButton rbOptionA, rbOptionB, rbOptionC, rbOptionD;
     private Button btnNext, btnSubmitTask, btnGetHint;
 
-    // Data Storage
     private JsonArray allQuestions;
     private int currentQuestionIndex = 0;
 
